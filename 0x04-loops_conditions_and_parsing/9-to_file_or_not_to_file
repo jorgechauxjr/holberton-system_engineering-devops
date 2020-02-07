@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# displays content of current directory
+
+FILE="holbertonschool"
+if test -f "$FILE";
+then
+    echo "$FILE file exists"
+    if test ! -s "$FILE";
+    then
+	    echo "$FILE file is empty"
+    else
+	echo "$FILE file is not empty"
+    fi
+    echo "$FILE is a regular file"
+else
+    echo "$FILE file does not exist"
+fi
