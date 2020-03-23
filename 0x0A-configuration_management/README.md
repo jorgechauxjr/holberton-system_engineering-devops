@@ -47,4 +47,5 @@ Requirements:
 
 - Must use the exec Puppet resource
 - Must use pkill
-#####Author: [Jorge Chaux Jr](https://github.com/jorgechauxjr)
+
+##### Author: [Jorge Chaux Jr](https://github.com/jorgechauxjr)
