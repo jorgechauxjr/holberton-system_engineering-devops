@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Executes "whoami" as a different user then changes back to root default
+runuser -l "$1" -c whoami
