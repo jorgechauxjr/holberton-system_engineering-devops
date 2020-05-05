@@ -6,8 +6,8 @@ import requests
 from sys import argv
 
 
-def to_do_list(user_id):
-    """retireve the toDo list"""
+def search_and_export_csv(user_id):
+    """Export data in the CSV format"""
     url = 'https://jsonplaceholder.typicode.com/'
     user_request = "{}users/{}".format(url, user_id)
     employee_dict = requests.get(user_request).json()
@@ -19,10 +19,10 @@ def to_do_list(user_id):
     file_name = "{}.csv".format(user_id)
 
     with open(file_name, mode='w') as csv_file:
-        csvWriter = csv.writer(csv_file)
+        csvWriter = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for info in tasks_dict:
             csvWriter.writerow([user_id, user_name,
-                               info.get("completed"), info.get("title")])
+                                info.get("completed"), info.get("title")])
 
 if __name__ == "__main__":
-    to_do_list(argv[1])
+    search_and_export_csv(argv[1])
