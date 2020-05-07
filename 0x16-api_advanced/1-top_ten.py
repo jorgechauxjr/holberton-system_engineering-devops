@@ -6,7 +6,7 @@ import requests
 
 def top_ten(subreddit):
     """prints the titles of the first 10 hot posts"""
-    url = "https://api.reddit.com/r/{}/top/.json?limit=10".format(subreddit)
+    url = "https://api.reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
     headers = {"User-Agent": "Python3"}
     response = requests.request("GET", url, headers=headers).json()
     try:
