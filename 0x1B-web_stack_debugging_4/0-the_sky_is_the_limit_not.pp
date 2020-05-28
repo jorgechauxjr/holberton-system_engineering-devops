@@ -1,11 +1,10 @@
-# Modify file
+# fixe nginx config /etc/default/nginx
 
-exec { 'Modify file':
-    command  => 'sed -i "s/-n 15/ -n 30000/g" /etc/default/nginx',
-    provider => 'shell'
+exec{ 'fix_nginx':
+      command  => 'sed -i "s/-n 15/-n 4100/g" /etc/default/nginx',
+      provider => 'shell'
 }
-
-exec { 'Restart nginx':
-    command  => 'service nginx restart',
-    provider => 'shell'
+exec{'restart_nginx':
+  command  => 'sudo service nginx restart',
+  provider => 'shell'
 }
